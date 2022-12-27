@@ -5,3 +5,5 @@ He creado este archivo en el repositorio local y voy a sincronizarlo con el repo
 Después voy a eliminarlo desde GitHub.
 
 Y desde el repositorio local lo editaré y lo intentaré subir al repositorio remoto de nuevo. 
+
+*Esta línea es una modificación del archivo base.*
