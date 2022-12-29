@@ -3,14 +3,16 @@
 #SBATCH -p hpc-bio-pacioli
 #SBATCH --chdir=/home/alumno24/lab5_p
 #SBATCH -J lab5.cut
-#SBATCH --cpus-per-task=1
-#SBATCH --ntasks-per-node=4
 #SBATCH --mail-type=END
 #SBATCH --mail-user=b.martinezgarcia@um.es
 
 
 
-#Ejecución del programa:
-srun ./file-cut.sh
+#Ejecución de los 4 procesos en paralelo con &
+./file-cut.sh Sample1.fastq &
+./file-cut.sh Sample2.fastq &
+./file-cut.sh Sample3.fastq &
+./file-cut.sh Sample4.fastq &
+
 
 

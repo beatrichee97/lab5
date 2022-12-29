@@ -1,13 +1,11 @@
 #!/bin/bash
 
-
-for i in Sample1.fastq Sample2.fastq Sample3.fastq Sample4.fastq
+for a in $@ ;
 do
-split -n 24 $i $i
+split -n 24 $a $a
 done
 
-#La opción -n x del comando split divide el archivo en x pedazos.
-#Los pedazos generados tendrán el nombre del archivo ($i) seguido del sufijo aa, ab, ac...
-#En mi caso, cada archivo .fastq se dividirá en 24 pedazos, y yo me quedaré con los que tengan el sufijo aa.
-#Los archivos Sample1.fastqaa Sample2.fastqaa Sample3.fastqaa Sample4.fastqaa los he movido al repositorio local
-#y los he renombrado con los nombres sin sufijo, lo que ha hecho que sustituyesen a los archivos originales.
+#Cada archivo .fastq que entre en el bucle será dividido en 24 pedazos, todos ellos del mismo tamaño.
+#El nombre de los archivos resultantes será el nombre del archivo original con los sufijos aa, ab, ac...
+#Yo me quedaré con los cuatro que tengan el sufijo aa (ej. Sample1.fastqaa), los copiaré en el repositorio local
+#y los renombraré con el nombre del archivo del que proceden para que se produzca el reemplazo.
